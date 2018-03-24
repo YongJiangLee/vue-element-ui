@@ -1,0 +1,99 @@
+@import url('http://at.alicdn.com/t/font_597877_3a3g8wshb54gqfr.css');
+/*reset*/
+body, div, span, header, footer, nav, section, aside, article, ul, dl, dt, dd, li, a, p, h1, h2, h3, h4,h5, h6, i, b, textarea, button, input, select, figure, figcaption {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    font-style: normal;
+    text-decoration: none;
+    border: none;
+    box-sizing: border-box;
+    font-family: "Microsoft Yahei",sans-serif;
+}
+input:-webkit-autofill, 
+textarea:-webkit-autofill, 
+select:-webkit-autofill { 
+  -webkit-box-shadow: 0 0 0 1000px #283443 inset; 
+  outline:none;
+}
+input:focus, button:focus{
+  outline: none;
+}
+.el-input__inner{
+  background: transparent;
+  border-color:#3D4855;
+  border-radius:2px;
+}
+a{
+  text-decoration:none;
+  color:#909399;
+}
+.center{
+  text-align:center;
+}
+.float-l{
+  float:left;
+}
+.float-r{
+  float:right;
+}
+.hide{
+  display:none;
+}
+.show{
+  display:block;
+}
+.clearfix{
+  *zoom: 1;
+}
+.clearfix:before, .clearfix:after{
+  display: table;
+  line-height: 0;
+  content: "";
+}
+.clearfix:after{
+  clear: both;
+}
+#app {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  width: 100%;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: all .2s ease;
+}
+
+.fade-enter,
+.fade-leave-active {
+  opacity: 0;
+}
+.el-menu-right .el-menu-item,.el-menu-right,.el-menu--horizontal>.el-submenu .el-submenu__title{
+  height:50px !important;
+  line-height:50px !important;
+}
+.el-menu-left .el-menu-item,.el-menu-left .el-submenu__title,.el-menu--vertical .el-menu-item{
+  height:40px !important;
+  line-height:40px !important;
+}
+.el-menu-item{
+  padding:0 10px;
+}
+.el-badge__content{
+  font-size: 12px;
+  color: #fff;
+  background: #f90;
+  border-radius: 5px;
+  padding: 2px 5px;
+  display: inline-block;
+  margin-top: 13px;
+  line-height: 16px;
+  vertical-align: top;
+  text-align: center;
+  border:0;
+}
+.user-popover{
+  padding: 0;
+}
