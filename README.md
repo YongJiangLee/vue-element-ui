@@ -1,4 +1,4 @@
-# vue02
+# vue+element-ui 
 
 > A Vue.js project
 
