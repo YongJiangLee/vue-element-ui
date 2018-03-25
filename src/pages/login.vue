@@ -14,7 +14,7 @@
               <el-input class="login-input" type="password" v-model="form.password" prefix-icon="iconfont icon-lock" placeholder="请输入密码"></el-input>
             </el-form-item>
             <el-form-item>
-              <el-button type="primary" @click="login()"  v-loading="listLoading">登录</el-button>
+              <el-button type="primary" @click="login()" v-loading="listLoading">登录</el-button>
             </el-form-item>
           </el-form>
         </el-col>
@@ -103,7 +103,8 @@ export default{
   bottom: 0;
   left: 0;
   background-size: 100% auto;
-  background:#2d3a4b;
+  background: url("../assets/login_bg.png") no-repeat center;
+  background-size: cover;
 }
 .login-wrap{
   padding: 50px 0 30px;
@@ -116,9 +117,6 @@ export default{
 }
 .el-button{
   width: 100%;
-}
-.el-input__inner{
-  background: transparent;
 }
 
 input{
