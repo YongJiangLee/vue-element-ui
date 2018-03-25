@@ -7,7 +7,7 @@
                 WEB系统
                 </el-col>
                 <el-col>
-                    <!-- 右侧导航 -->
+                    <!-- 顶部导航 -->
                     <el-menu
                         class="el-menu-right"
                         mode="horizontal"
@@ -15,6 +15,7 @@
                         background-color="#373d41"
                         text-color="#fff"
                         active-text-color="#409EFF"
+                        menu-trigger="hover"
                     >
                         <el-menu-item index="1" v-popover:msg>
                             <!-- 消息提示 -->
@@ -57,7 +58,11 @@
                         </el-menu-item>
                             <el-submenu index="2">
                             <template slot="title">我的工作台</template>
-                            <el-menu-item index="2-1">选项1</el-menu-item>
+                            <el-menu-item 
+                              index="2-1" 
+                              @click="$router.push('/main/child1');">
+                              页面1
+                            </el-menu-item>
                             <el-menu-item index="2-2">选项2</el-menu-item>
                             <el-menu-item index="2-3">选项3</el-menu-item>
                             </el-submenu>
@@ -127,10 +132,8 @@
                                                 </li> 
                                             </ul>    
                                         </div>  
-                                        <div class="user-out center">
-                                            <router-link to="/">
+                                        <div class="user-out center" @click="logOut">
                                             退出管理平台
-                                            </router-link>
                                         </div>
                                     </div>
                                 </el-popover>            
@@ -149,7 +152,7 @@
                 :unique-opened="true" 
                 :router="true" 
                 :collapse="isCollapse"
-                default-active="1"
+                default-active="1-1"
                 :class="{menuwidth:!isCollapse}"
             >
                 <p class="mianbaoxie">
@@ -158,7 +161,7 @@
                         @click="closeAside">
                     </i>
                 </p>
-                <template v-for="(item, index) in menu">
+                <!-- <template v-for="(item, index) in menu">
                     <el-submenu  
                     v-if="item.submenu" 
                     :key="index" 
@@ -178,8 +181,65 @@
                         <i :class="item.icon"></i>
                         <span slot="title">{{item.title}}</span>
                     </el-menu-item>
-                </template>
-            </el-menu>
+                </template> -->
+                
+                <el-submenu index="1">
+                  <template slot="title">
+                    <i class="iconfont icon-guanli"></i>
+                    <span slot="title">导航一</span>
+                  </template>
+                  <el-menu-item index="1-1" :route="{path:'/main/child1'}">
+                    <i class="iconfont icon-guanli"></i>
+                    <span>页面1</span>
+                  </el-menu-item>
+                  <el-menu-item index="1-2" :route="{path:'/main/child2'}">
+                    <i class="iconfont icon-guanli"></i>
+                    <span>页面2</span>
+                  </el-menu-item>
+                  <el-menu-item index="1-3" :route="{path:'/main/child3'}">
+                    <i class="iconfont icon-guanli"></i>
+                    <span>页面3</span>
+                  </el-menu-item>
+                </el-submenu>
+
+                <el-submenu index="2">
+                  <template slot="title">
+                    <i class="iconfont icon-quanxianguanli"></i>
+                    <span slot="title">导航二</span>
+                  </template>
+                  <el-menu-item index="2-1" :route="{path:'/main/child1'}">
+                    <i class="iconfont icon-quanxianguanli"></i>
+                    <span>页面1</span>
+                  </el-menu-item>
+                  <el-menu-item index="2-2" :route="{path:'/main/child2'}">
+                    <i class="iconfont icon-quanxianguanli"></i>
+                    <span>页面2</span>
+                  </el-menu-item>
+                  <el-menu-item index="2-3" :route="{path:'/main/child3'}">
+                    <i class="iconfont icon-quanxianguanli"></i>
+                    <span>页面3</span>
+                  </el-menu-item>
+                </el-submenu>
+
+                <el-submenu index="3">
+                  <template slot="title">
+                    <i class="iconfont icon-shezhi-tianchong"></i>
+                    <span slot="title">导航三</span>
+                  </template>
+                  <el-menu-item index="3-1" :route="{path:'/main/child1'}">
+                    <i class="iconfont icon-shezhi-tianchong"></i>
+                    <span>页面1</span>
+                  </el-menu-item>
+                  <el-menu-item index="3-2" :route="{path:'/main/child2'}">
+                    <i class="iconfont icon-shezhi-tianchong"></i>
+                    <span>页面2</span>
+                  </el-menu-item>
+                  <el-menu-item index="3-3" :route="{path:'/main/child3'}">
+                    <i class="iconfont icon-shezhi-tianchong"></i>
+                    <span>页面3</span>
+                  </el-menu-item>
+                </el-submenu>
+              </el-menu>
             <el-container>
                 <!-- 内容区域 -->
                 <el-main>
@@ -241,11 +301,15 @@ export default {
     }
   },
   mounted () {
-    // this.$router.push('/main/child2'); 
+   
   },
   methods : {
     closeAside () {
       this.isCollapse = !this.isCollapse;
+    },
+    logOut () {
+      localStorage.removeItem('Token');
+      this.$router.push('/');
     }
   }
 }
@@ -353,11 +417,10 @@ export default {
     background-color: #f5f5f6;
     cursor:pointer;
   }
-  .user-out a{
+  .user-out {
     transition:all .2s linear;
   }
-  .user-out:hover a{
+  .user-out:hover {
     color:#409EFF;
-
   }
 </style>

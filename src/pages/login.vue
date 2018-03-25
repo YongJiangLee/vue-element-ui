@@ -64,12 +64,9 @@ export default{
       });
     },
     login () {
-      if (this.form.username == '' || this.form.password == '') {
-        return;
-      }
-      this.listLoading = true;
       this.$refs.form.validate(valid => {
         if (valid) {
+          this.listLoading = true;
           let url = 'AccountManager/MobileLogin';
           let data = {
             Params: {
@@ -81,7 +78,7 @@ export default{
           this.$http.post(url,data).then(response => {
            if (response.data.Flag == '1') {
              localStorage.setItem('Token', response.data.Data.Token);
-             this.$router.push('/main/child1');
+             this.$router.push('/main');
            } else {
               this.open();
            }

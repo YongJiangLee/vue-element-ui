@@ -19,11 +19,6 @@ select:-webkit-autofill {
 input:focus, button:focus{
   outline: none;
 }
-.el-input__inner{
-  background: transparent;
-  border-color:#3D4855;
-  border-radius:2px;
-}
 a{
   text-decoration:none;
   color:#909399;
@@ -60,12 +55,10 @@ a{
   bottom: 0px;
   width: 100%;
 }
-
 .fade-enter-active,
 .fade-leave-active {
   transition: all .2s ease;
 }
-
 .fade-enter,
 .fade-leave-active {
   opacity: 0;

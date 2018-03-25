@@ -18,25 +18,31 @@ var router =  new Router({
       path: '/main',
       name: 'mainvue',
       component: main,
-      meta: {
-          requireAuth: true,  // 需要登录
-      },
+      redirect: '/main/child1',
       children:[
         {
           path: '/main/child1',
           name: 'child1',
-          component: child1
-           
+          component: child1,
+          meta: {
+              requireAuth: true 
+          }
         },
         {
           path: '/main/child2',
           name: 'child2',
           component: child2,
+          meta: {
+              requireAuth: true 
+          }
         },
         {
           path: '/main/child3',
           name: 'child3',
           component: child3,
+          meta: {
+              requireAuth: true 
+          }
         }
       ]
     }
