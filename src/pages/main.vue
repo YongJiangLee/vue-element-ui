@@ -4,7 +4,7 @@
         <el-header class="header" height="50px">
             <el-row :gutter="20" type="flex" justify="space-between">
                 <el-col :span="4">
-                WEB系统1
+                <span class="logo">管理控制台</span>
                 </el-col>
                 <el-col>
                     <!-- 顶部导航 -->
@@ -57,7 +57,7 @@
                             </el-popover>
                         </el-menu-item>
                             <el-submenu index="2">
-                            <template slot="title">我的工作台</template>
+                            <template slot="title">费用</template>
                             <el-menu-item 
                               index="2-1" 
                               @click="$router.push('/main/child1');">
@@ -66,8 +66,11 @@
                             <el-menu-item index="2-2">选项2</el-menu-item>
                             <el-menu-item index="2-3">选项3</el-menu-item>
                             </el-submenu>
-                            <el-menu-item index="4">订单管理</el-menu-item>
-                            <el-menu-item index="5" v-popover:user>
+                            <el-menu-item index="4">工单</el-menu-item>
+                            <el-menu-item index="5">备案</el-menu-item>
+                            <el-menu-item index="6">企业</el-menu-item>
+                            <el-menu-item index="7">支持</el-menu-item>
+                            <el-menu-item index="8" v-popover:user>
                                 <img class="user-img" src="../assets/default_handsome.jpg" alt="">
                                 <el-popover
                                     popper-class="user-popover"
@@ -322,15 +325,31 @@ export default {
     font-size:18px;
     color: #fff;  
   }
+  .logo{
+    font-size: 16px;
+  }
   .menuwidth{
-    width:230px;
+    width:199px;
+  }
+  .el-menu--collapse{
+    width:50px;
   }
   .menu-title{
     color:#fff;
   }
+
+  .el-menu-left .is-active,.el-menu--popup .is-active,.el-menu-left .is-active:hover
+  ,.el-menu--popup .is-active:hover{
+    background: #00c1de !important;
+    color:#fff !important;
+  }
   .el-main {
     background-color: #E9EEF3;
     color: #333;
+  }
+  .el-submenu .el-menu-item{
+    min-width:179px;
+    padding-left:12px !important;
   }
   .el-container{
     width:100%;
@@ -346,15 +365,16 @@ export default {
   }
   .mianbaoxie i{
     display:inline-block;
-    color:#909399;
+    color:#aeb9c2;
     font-size:18px;
     cursor:pointer;
+    transform:rotate(90deg);
   }
   .mianbaoxie i:hover{
     color:#fff;
   }
-  .rotate{
-    transform:rotate(90deg);
+  .el-menu-left .rotate{
+    transform:rotate(0deg);
   }
   .el-menu--horizontal{
     border-bottom:0 !important;
@@ -412,8 +432,8 @@ export default {
     background: #f5f5f5;
   }
   .user-out{
-    height:40px;
-    line-height:40px;  
+    height:50px;
+    line-height:50px;  
     background-color: #f5f5f6;
     cursor:pointer;
   }
