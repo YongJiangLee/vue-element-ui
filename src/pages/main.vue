@@ -30,7 +30,7 @@
                                     <ul class="msg-list">
                                         <li>
                                             <p class="top-msg">
-                                                <span>张三</span>
+                                                <span>张三1</span>
                                                 <span>任务类型1</span>
                                                 <span>请XX批示</span>  
                                             </p>
